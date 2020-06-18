@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ResultFragment">
+
+    <TextView
+        android:id="@+id/results_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="Results"
+        android:textColor="@color/colorPrimary"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/result_progress_bar"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@id/results_tv"
+        app:layout_constraintStart_toStartOf="@id/results_tv"
+        app:layout_constraintTop_toBottomOf="@id/results_tv" />
+
+    <TextView
+        android:id="@+id/progress_bar_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="100%"
+        android:textColor="@color/colorPrimary"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@id/result_progress_bar"
+        app:layout_constraintEnd_toEndOf="@id/result_progress_bar"
+        app:layout_constraintStart_toStartOf="@id/result_progress_bar"
+        app:layout_constraintTop_toTopOf="@id/result_progress_bar" />
+
+    <TextView
+        android:id="@+id/correct_answers_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="Correct Answers"
+        android:textAllCaps="false"
+        android:textColor="@color/colorLightText"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/result_progress_bar" />
+
+
+    <TextView
+        android:id="@+id/correct_answers_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="NA"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/correct_answers_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/correct_answers_text" />
+
+    <TextView
+        android:id="@+id/wrong_answers_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="Wrong Answers"
+        android:textAllCaps="false"
+        android:textColor="@color/colorLightText"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/correct_answers_text"
+        app:layout_constraintTop_toBottomOf="@id/correct_answers_text" />
+
+
+    <TextView
+        android:id="@+id/wrong_answers_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="NA"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/wrong_answers_text"
+        app:layout_constraintEnd_toEndOf="@id/correct_answers_value"
+        app:layout_constraintTop_toTopOf="@id/wrong_answers_text" />
+
+    <TextView
+        android:id="@+id/missed_answers_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="Missed Questions"
+        android:textAllCaps="false"
+        android:textColor="@color/colorLightText"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/wrong_answers_text"
+        app:layout_constraintTop_toBottomOf="@id/wrong_answers_text" />
+
+
+    <TextView
+        android:id="@+id/missed_answers_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="NA"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/missed_answers_text"
+        app:layout_constraintEnd_toEndOf="@id/wrong_answers_value"
+        app:layout_constraintTop_toTopOf="@id/missed_answers_text" />
+
+    <Button
+        android:id="@+id/goto_home_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/next_question_btn_background"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:padding="8dp"
+        android:text="Go To Home"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

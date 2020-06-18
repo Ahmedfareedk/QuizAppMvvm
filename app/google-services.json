@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "89820573017",
+    "firebase_url": "https://quizappmvvm.firebaseio.com",
+    "project_id": "quizappmvvm",
+    "storage_bucket": "quizappmvvm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89820573017:android:e66b10b4905843bf3c3048",
+        "android_client_info": {
+          "package_name": "com.example.quizappmvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89820573017-91brd209g8c3asrtr55nvehotbg9i70p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quizappmvvm",
+            "certificate_hash": "18312b023abad1c4f5b01f626d6e6ba1ec2ad558"
+          }
+        },
+        {
+          "client_id": "89820573017-qtl918kn5dqm4ee2pdv340tkkcdarefp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3ihy_iNAlWFnZxvhmQZVo_TASgVzTMhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "89820573017-qtl918kn5dqm4ee2pdv340tkkcdarefp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

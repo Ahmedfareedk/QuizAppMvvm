@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.quizappmvvm.ListFragment"
+        android:name="com.example.quizappmvvm.view.quiz_list.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
         <action
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.quizappmvvm.DetailsFragment"
+        android:name="com.example.quizappmvvm.view.details.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" >
         <action
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.example.quizappmvvm.QuizFragment"
+        android:name="com.example.quizappmvvm.view.quiz.QuizFragment"
         android:label="fragment_quiz"
         tools:layout="@layout/fragment_quiz" >
         <action
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.example.quizappmvvm.ResultFragment"
+        android:name="com.example.quizappmvvm.view.result.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
 </navigation>

@@ -6,7 +6,7 @@ public class QuizModel {
     @DocumentId
     private String quizId;
     private String name, image, level, desc, visibility;
-    private long numOfQuestions;
+    private long questions;
 
     public QuizModel() {}
 
@@ -17,7 +17,7 @@ public class QuizModel {
         this.level = level;
         this.desc = desc;
         this.visibility = visibility;
-        this.numOfQuestions = numOfQuestions;
+        this.questions = numOfQuestions;
     }
 
     public String getQuizId() {
@@ -68,12 +68,12 @@ public class QuizModel {
         this.visibility = visibility;
     }
 
-    public long getNumOfQuestions() {
-        return numOfQuestions;
+    public long getQuestions() {
+        return questions;
     }
 
-    public void setNumOfQuestions(long numOfQuestions) {
-        this.numOfQuestions = numOfQuestions;
+    public void setQuestions(long questions) {
+        this.questions = questions;
     }
 
 

@@ -12,15 +12,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.quizappmvvm.R;
+import com.example.quizappmvvm.callback.OnQuizListItemCLicked;
 import com.example.quizappmvvm.model.QuizModel;
 
 import java.util.List;
 
 public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder> {
     private List<QuizModel> quizList;
+    private OnQuizListItemCLicked onQuizListItemCLicked;
 
-    public QuizAdapter() {
+    public QuizAdapter(OnQuizListItemCLicked onQuizListItemCLicked) {
+        this.onQuizListItemCLicked = onQuizListItemCLicked;
     }
+
 
     public void setQuizList(List<QuizModel> quizList) {
         this.quizList = quizList;
@@ -47,7 +51,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
         return quizList.size();
     }
 
-    public class QuizViewHolder extends RecyclerView.ViewHolder {
+    public class QuizViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView quizImage;
         private TextView quizTitleTV, quizDescTV, quizDifficultyTV;
         private Button viewQuizBtn;
@@ -59,6 +63,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
             quizDescTV =  itemView.findViewById(R.id.list_quiz_desc);
             quizDifficultyTV =  itemView.findViewById(R.id.list_quiz_difficulty);
             viewQuizBtn =  itemView.findViewById(R.id.list_item_button);
+            viewQuizBtn.setOnClickListener(this);
         }
 
         private void bindViews(QuizModel model){
@@ -73,5 +78,9 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
             quizTitleTV.setText(model.getName());
         }
 
+        @Override
+        public void onClick(View v) {
+            onQuizListItemCLicked.onItemPositionClicked(getAdapterPosition());
+        }
     }
 }

@@ -5,6 +5,7 @@ import com.google.firebase.firestore.DocumentId;
 public class QuizModel {
     @DocumentId
     private String quizId;
+
     private String name, image, level, desc, visibility;
     private long questions;
 

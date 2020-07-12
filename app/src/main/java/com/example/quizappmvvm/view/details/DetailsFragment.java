@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.example.quizappmvvm.R;
 import com.example.quizappmvvm.databinding.FragmentDetailsBinding;
+import com.example.quizappmvvm.model.QuizModel;
 import com.example.quizappmvvm.viewmodel.QuizListViewModel;
 
 
@@ -30,6 +31,9 @@ public class DetailsFragment extends Fragment {
     private NavController navController;
     private QuizListViewModel detailsViewModel;
     private int position;
+    private String quizId;
+    private long totalQuestions;
+    private QuizModel model;
 
 
     public DetailsFragment() {
@@ -64,6 +68,11 @@ public class DetailsFragment extends Fragment {
             detailsBinding.listQuizDifficultyValue.setText(quizModels.get(position).getLevel());
             detailsBinding.listQuizTotalQuestionsDetailsValue.setText(String.valueOf(quizModels.get(position).getQuestions()));
 
+            //getting quiz id
+            quizId = quizModels.get(position).getQuizId();
+            //getting total questions
+            totalQuestions = quizModels.get(position).getQuestions();
+
         });
 
 
@@ -75,9 +84,14 @@ public class DetailsFragment extends Fragment {
         navController = Navigation.findNavController(view);
         assert getArguments() != null;
         position = DetailsFragmentArgs.fromBundle(getArguments()).getPosition();
+
+
+
         detailsBinding.startQuizBtn.setOnClickListener(v -> {
             DetailsFragmentDirections.ActionDetailsFragmentToQuizFragment action = DetailsFragmentDirections.actionDetailsFragmentToQuizFragment();
             action.setPosition(position);
+            action.setTotalQuestions(totalQuestions);
+            action.setQuizId(quizId);
             navController.navigate(action);
 
         });

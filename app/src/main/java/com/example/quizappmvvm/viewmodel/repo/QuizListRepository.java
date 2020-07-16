@@ -8,6 +8,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Objects;
@@ -15,7 +16,7 @@ import java.util.Objects;
 public class QuizListRepository {
     private OnFirestoreTaskComplete taskComplete;
     private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-    private CollectionReference quizCollectionReference = firestore.collection("QuestionsList");
+    private Query quizCollectionReference = firestore.collection("QuestionsList").whereEqualTo("visibility", "public");
 
     public QuizListRepository(OnFirestoreTaskComplete taskComplete) {
         this.taskComplete = taskComplete;

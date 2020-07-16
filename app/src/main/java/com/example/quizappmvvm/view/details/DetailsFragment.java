@@ -33,7 +33,8 @@ public class DetailsFragment extends Fragment {
     private int position;
     private String quizId;
     private long totalQuestions;
-    private QuizModel model;
+    private String quizName;
+
 
 
     public DetailsFragment() {
@@ -73,6 +74,9 @@ public class DetailsFragment extends Fragment {
             //getting total questions
             totalQuestions = quizModels.get(position).getQuestions();
 
+            //getting quiz name
+            quizName = quizModels.get(position).getName();
+
         });
 
 
@@ -92,6 +96,7 @@ public class DetailsFragment extends Fragment {
             action.setPosition(position);
             action.setTotalQuestions(totalQuestions);
             action.setQuizId(quizId);
+            action.setQuizName(quizName);
             navController.navigate(action);
 
         });
